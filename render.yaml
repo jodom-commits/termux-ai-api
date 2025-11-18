@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: jarvis-api
+    env: python
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:$PORT
+
+    envVars:
+      - key: c479459c42c9453cb0874154251811
+        sync: false
+      - key: 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
+        sync: false
